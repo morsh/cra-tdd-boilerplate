@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../images/logo.svg';
+import { ReactComponent as Logo } from '../../images/logo.svg';
 import s from './About.module.css';
 
 export const About = () => (
