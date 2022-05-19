@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "start:no-browser": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "e2e": "BROWSER=none start-server-and-test start http://localhost:3000 e2e:cypress",
+    "e2e": "start-server-and-test start:no-browser http://localhost:3000 e2e:cypress",
     "e2e:cypress": "cypress run",
     "lint": "tslint --project ./tsconfig.json",
     "eject": "react-scripts eject"
