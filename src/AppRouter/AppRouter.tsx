@@ -13,8 +13,8 @@ export const LocationDisplay = () => {
 
 export const AppRouter = () => (
   <div className={s.navRoutes} data-hook='app-router'>
-    <Link data-hook='home-link' to='/'>Home</Link>
-    <Link data-hook='about-link' to='/about'>About</Link>
+    <Link className={s.link} data-hook='home-link' to='/'>Home</Link>
+    <Link className={s.link} data-hook='about-link' to='/about'>About</Link>
 
     <Routes>
       <Route path='/' element={<Home />} />

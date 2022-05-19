@@ -15,6 +15,7 @@ describe('AppRouter', () => {
     await waitFor(() => expect(history.location.pathname).toEqual('/about'));
 
     expect(screen.getByText(/You are on the about page/)).toBeInTheDocument();
+    expect(screen.getByTestId('about-page')).toContainHTML('<svg');
   });
 
   it('should render no-match page when path isnt found', async () => {
