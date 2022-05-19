@@ -5,15 +5,15 @@ import { AppRouter } from '../AppRouter/AppRouter';
 
 function App() {
   return (
-    <Router>
-      <div className='App' data-hook='root-app'>
+    <div className='App' data-hook='root-app'>
+      <Router>
         <div>
           Hello World 1
         </div>
         <span>some text</span>
-      </div>
-      <AppRouter />
-    </Router>
+        <AppRouter />
+      </Router>
+    </div>
   );
 }
 

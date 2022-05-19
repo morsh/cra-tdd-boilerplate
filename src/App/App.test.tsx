@@ -13,10 +13,8 @@ describe('App', () => {
     expect(screen.getByText('some text')).toBeInTheDocument();
   });
 
-  it('should have App class', async () => {
+  it('should render app-router', async () => {
     render(<App />);
-    const rootApp = await screen.getByTestId('root-app');
-    expect(rootApp).toHaveAttribute('class', 'App');
-    expect(rootApp.childElementCount).toEqual(2);
+    expect(screen.getByTestId('app-router')).toBeInTheDocument();
   });
 });

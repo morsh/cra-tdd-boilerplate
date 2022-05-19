@@ -1,0 +1,12 @@
+.nav-routes > a {
+  padding: 5px;
+}
+
+.nav-routes svg {
+  height: 50px;
+}
+
+.nav-routes > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
