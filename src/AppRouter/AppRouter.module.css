@@ -1,12 +1,12 @@
-.nav-routes > a {
+.navRoutes > a {
   padding: 5px;
 }
 
-.nav-routes svg {
+.navRoutes svg {
   height: 50px;
 }
 
-.nav-routes > div {
+.navRoutes > div {
   display: flex;
   flex-direction: column-reverse;
 }
