@@ -9,6 +9,16 @@ describe('Counter', () => {
     expect(screen.getByTestId('counter-value')).toContainHTML('0');
   });
 
+  it('should contain `increment` text', async () => {
+    render(<Counter />);
+    expect(screen.getByTestId('counter-inc')).toContainHTML('pages.counter.increment');
+  });
+
+  it('should contain `decrement` text', async () => {
+    render(<Counter />);
+    expect(screen.getByTestId('counter-dec')).toContainHTML('pages.counter.decrement');
+  });
+
   it('should increment by 1', async () => {
     render(<Counter />);
     userEvent.click(screen.getByTestId('counter-inc'));
@@ -19,5 +29,11 @@ describe('Counter', () => {
     render(<Counter />, { preloadedState: { counter: 1 } });
     userEvent.click(screen.getByTestId('counter-dec'));
     expect(screen.getByTestId('counter-value')).toContainHTML('0');
+  });
+
+  it('should decrement by 2', async () => {
+    render(<Counter />);
+    userEvent.click(screen.getByTestId('counter-inc2'));
+    expect(screen.getByTestId('counter-value')).toContainHTML('2');
   });
 });

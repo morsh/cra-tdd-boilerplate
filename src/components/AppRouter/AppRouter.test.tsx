@@ -13,9 +13,7 @@ describe('AppRouter', () => {
     const history = renderWithHistory();
     userEvent.click(screen.getByTestId('about-link'));
     await waitFor(() => expect(history.location.pathname).toEqual('/about'));
-
-    expect(screen.getByText(/You are on the about page/)).toBeInTheDocument();
-    expect(screen.getByTestId('about-page')).toContainHTML('<svg');
+    expect(screen.getByTestId('about-page')).toBeInTheDocument();
   });
 
   it('should render no-match page when path isnt found', async () => {
@@ -29,5 +27,12 @@ describe('AppRouter', () => {
     await waitFor(() => expect(history.location.pathname).toEqual('/'));
 
     expect(screen.getByText(/You are home/)).toBeInTheDocument();
+  });
+
+  it('should render counter when clicking on counter', async () => {
+    const history = renderWithHistory();
+    userEvent.click(screen.getByTestId('counter-link'));
+    await waitFor(() => expect(history.location.pathname).toEqual('/counter'));
+    expect(screen.getByTestId('counter-page')).toBeInTheDocument();
   });
 });

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { Counter } from '../Counter/Counter';
-import { About } from '../Routes/About';
-import { Home } from '../Routes/Home';
-import { NoMatch } from '../Routes/NoMatch';
+import { About } from '../About/About';
+import { Home } from './Routes/Home';
+import { NoMatch } from './Routes/NoMatch';
 import s from './AppRouter.module.css';
 
 export const LocationDisplay = () => {
