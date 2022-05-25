@@ -3,20 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "start:no-browser": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "start:no-browser": "BROWSER=none react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "yarn lint && yarn test:unit && yarn test:e2e",
-    "test:unit": "react-scripts test --watchAll=false",
-    "test:watch": "react-scripts test",
-    "test:e2e": "start-server-and-test start:no-browser http://localhost:3000 test:e2e:cypress",
-    "test:e2e:cypress": "cypress run",
+    "test:unit": "react-app-rewired test --watchAll=false",
+    "test:watch": "react-app-rewired test",
+    "test:e2e": "start-server-and-test start:no-browser http://localhost:3000 cypress:test",
+    "cypress:test": "cypress run",
+    "cypress:open": "cypress open",
     "lint": "tslint --project ./tsconfig.json",
-    "eject": "react-scripts eject"
+    "eject": "react-app-rewired eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "i18next": "^21.8.4",
+    "i18next-http-backend": "^1.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.16.9",
+    "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
@@ -25,6 +34,16 @@
   "devDependencies": {
     "@cypress/react": "^5.12.5",
     "@cypress/webpack-dev-server": "^1.8.4",
+    "@storybook/addon-actions": "^6.5.4",
+    "@storybook/addon-essentials": "^6.5.4",
+    "@storybook/addon-interactions": "^6.5.4",
+    "@storybook/addon-links": "^6.5.4",
+    "@storybook/builder-webpack5": "^6.5.4",
+    "@storybook/manager-webpack5": "^6.5.4",
+    "@storybook/node-logger": "^6.5.4",
+    "@storybook/preset-create-react-app": "^4.1.1",
+    "@storybook/react": "^6.5.4",
+    "@storybook/testing-library": "^0.0.11",
     "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -33,10 +52,16 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-helmet": "^6.1.5",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "cypress": "^9.6.1",
     "msft-tslint-config": "^1.0.0",
+    "prop-types": "^15.8.1",
+    "react-app-rewire-multiple-entry": "^2.2.2",
+    "react-app-rewired": "^2.2.1",
     "start-server-and-test": "^1.14.0",
-    "tslint": "^6.1.3"
+    "tslint": "^6.1.3",
+    "webpack": "^5.72.1"
   },
   "browserslist": {
     "production": [
@@ -48,6 +73,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   }
 }

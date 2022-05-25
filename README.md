@@ -7,6 +7,11 @@ The following resources are in use in this project:
 - TSLint
 - Cypress
 - react-router
+- i18next
+- helmet
+- redux
+- storybook
+- rewired
 
 # Getting Started with Create React App
 
