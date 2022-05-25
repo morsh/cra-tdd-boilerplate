@@ -3,5 +3,7 @@
   "pages.counter.increment": "הוסף",
   "pages.counter.decrement": "החסר",
   "pages.counter.increase2": "הוסף 2",
-  "pages.about.desc": "את.ה בדף האודות"
+  "pages.about.desc": "את.ה בדף האודות",
+  "pages.no-match": "אין התאמה",
+  "pages.home": "את.ה בדף הבית"
 }

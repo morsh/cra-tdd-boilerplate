@@ -6,7 +6,7 @@ describe('AppRouter', () => {
 
   it('should render home by default', () => {
     renderWithHistory();
-    expect(screen.getByText(/You are home/)).toBeInTheDocument();
+    expect(screen.getByTestId('page-home')).toBeInTheDocument();
   });
 
   it('should render about when clicking on `about`', async () => {
@@ -18,7 +18,7 @@ describe('AppRouter', () => {
 
   it('should render no-match page when path isnt found', () => {
     renderWithHistory('/some/bad/route');
-    expect(screen.getByText(/no match/i)).toBeInTheDocument();
+    expect(screen.getByTestId('page-no-match')).toBeInTheDocument();
   });
 
   it('should render home when clicking on `home`', async () => {
@@ -26,7 +26,7 @@ describe('AppRouter', () => {
     userEvent.click(screen.getByTestId('home-link'));
     await waitFor(() => expect(history.location.pathname).toEqual('/'));
 
-    expect(screen.getByText(/You are home/)).toBeInTheDocument();
+    expect(screen.getByTestId('page-home')).toBeInTheDocument();
   });
 
   it('should render counter when clicking on counter', async () => {
