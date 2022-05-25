@@ -11,7 +11,7 @@
     "test:watch": "react-app-rewired test",
     "test:e2e": "start-server-and-test start:no-browser http://localhost:3000 e2e",
     "e2e": "cd e2e && jest",
-    "lint": "tslint --project ./tsconfig.json",
+    "lint": "eslint -c .eslintrc.js --ext .ts .",
     "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"

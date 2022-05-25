@@ -31,6 +31,7 @@ module.exports = {
     "@typescript-eslint",
   ],
   "root": true,
+  "ignorePatterns": ["**/*.js"],
   "rules": {
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
