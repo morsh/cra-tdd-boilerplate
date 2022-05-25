@@ -1,8 +1,8 @@
 const multipleEntry = require('react-app-rewire-multiple-entry')([
   {
-    entry: 'src/index2.tsx',
+    entry: 'src/second-entry.tsx',
     template: 'public/index.html',
-    outPath: '/landing.html'
+    outPath: '/second-entry.html'
   }
 ]);
 
