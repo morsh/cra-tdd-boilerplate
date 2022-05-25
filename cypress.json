@@ -1,6 +1,0 @@
-{
-  "baseUrl": "http://localhost:3000",
-  "video": false,
-  "integrationFolder": "e2e",
-  "testFiles": "**/*.e2e.ts"
-}

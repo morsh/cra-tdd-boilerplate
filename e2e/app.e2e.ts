@@ -1,16 +1,23 @@
+import 'expect-puppeteer';
+import { byHook, findByText, getText, intercept } from './utils/utils';
+
+
 describe('Demo App E2E', () => {
-  it('should load home page', () => {
-    cy.visit('http://localhost:3000/');
-    cy.findByTestId('page-home').should('exist');
+  it('should load home page', async () => {
+    await page.goto('http://localhost:3000/');
+    await page.waitForSelector(byHook('root-app'));
+
+    await expect(getText(byHook('page-home'))).resolves.toEqual('You are home');
   });
 
-  it('should show `Loading...` before i18n resources were loaded', () => {
-    cy.intercept('/translations/messages.en.json', async (req) => {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      req.continue();
+  it('should show `Loading...` before i18n resources were loaded', async () => {
+    await intercept('/translations/messages.en.json', request => {
+      void new Promise(resolve => setTimeout(resolve, 1000)).then(() => request.continue());
     });
 
-    cy.visit('http://localhost:3000/', {});
-    cy.findByText('Loading...').should('exist');
+
+    await page.goto('http://localhost:3000/');
+    await expect(findByText('Loading...')).resolves.toBeTruthy();
   });
+
 });

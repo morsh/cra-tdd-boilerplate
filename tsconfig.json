@@ -19,10 +19,14 @@
     "isolatedModules": false,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": [
+      "puppeteer",
+      "jest-environment-puppeteer",
+      "expect-puppeteer"
+    ]
   },
   "include": [
     "src",
-    "e2e",
-    "cypress"
+    "e2e"
   ]
 }
