@@ -18,7 +18,7 @@ function getLocaleFromUrlParams() {
   return urlParams.get('locale') || 'en';
 }
 const locale = getLocaleFromUrlParams();
-init18n(locale);
+init18n(locale).catch(console.error);
 
 const Root = () => {
   return (

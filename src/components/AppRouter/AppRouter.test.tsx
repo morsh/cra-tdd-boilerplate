@@ -16,7 +16,7 @@ describe('AppRouter', () => {
     expect(screen.getByTestId('about-page')).toBeInTheDocument();
   });
 
-  it('should render no-match page when path isnt found', async () => {
+  it('should render no-match page when path isnt found', () => {
     renderWithHistory('/some/bad/route');
     expect(screen.getByText(/no match/i)).toBeInTheDocument();
   });

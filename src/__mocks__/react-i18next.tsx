@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import React, { ElementType } from 'react';
 import * as reactI18next from 'react-i18next';
 

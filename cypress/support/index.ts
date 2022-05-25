@@ -1,3 +1,4 @@
+/* eslint-disable */
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.
@@ -14,8 +15,21 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands';
-import './testing-library';
+import "./commands";
+import "./testing-library";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+/// <reference types="cypress" />
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      /**
+       * Custom command to select DOM element by data-cy attribute.
+       * @example cy.dataCy('greeting')
+       */
+      dataCy(value: string): Chainable<Element>;
+    }
+  }
+}

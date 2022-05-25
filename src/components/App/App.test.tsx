@@ -8,7 +8,7 @@ describe('App', () => {
     expect(screen.getByText('app.title')).toBeInTheDocument();
   });
 
-  it('should render app-router', async () => {
+  it('should render app-router', () => {
     render(<App />);
     expect(screen.getByTestId('app-router')).toBeInTheDocument();
   });

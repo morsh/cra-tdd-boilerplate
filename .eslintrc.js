@@ -27,7 +27,7 @@ module.exports = {
   },
   "plugins": [
     "eslint-plugin-jsdoc",
-    "eslint-plugin-prefer-arrow",
+    "prefer-arrow",
     "@typescript-eslint",
   ],
   "root": true,
@@ -90,7 +90,13 @@ module.exports = {
       }
     ],
     "@typescript-eslint/member-ordering": "error",
-    "@typescript-eslint/naming-convention": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "function",
+        "format": ["PascalCase", "camelCase"]
+      }  
+    ],
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "off",
@@ -218,7 +224,15 @@ module.exports = {
       "error",
       "never"
     ],
-    "prefer-arrow/prefer-arrow-functions": [ "error", { "allowNamedFunctions": true } ],
+    // "prefer-arrow/prefer-arrow-functions": [ "error", { "allowNamedFunctions": true } ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
     "prefer-const": "error",
     "quotes": ["error", "single"],
     "radix": "error",
