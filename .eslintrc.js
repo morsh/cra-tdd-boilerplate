@@ -27,7 +27,6 @@ module.exports = {
   },
   "plugins": [
     "eslint-plugin-jsdoc",
-    "prefer-arrow",
     "@typescript-eslint",
   ],
   "root": true,
@@ -77,6 +76,7 @@ module.exports = {
     ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/member-delimiter-style": [
       "error",
       {
@@ -225,15 +225,7 @@ module.exports = {
       "error",
       "never"
     ],
-    // "prefer-arrow/prefer-arrow-functions": [ "error", { "allowNamedFunctions": true } ],
-    "prefer-arrow/prefer-arrow-functions": [
-      "warn",
-      {
-        "disallowPrototype": true,
-        "singleReturnOnly": false,
-        "classPropertiesAllowed": false
-      }
-    ],
+    "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "quotes": ["error", "single"],
     "radix": "error",
