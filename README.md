@@ -4,14 +4,20 @@ This project is a boilerplate with all the basics for a project to support TDD w
 The following resources are in use in this project:
 - Create React App
 - Typescript
-- TSLint
-- Cypress
+- ESLint
+- Cypress // https://www.testim.io/
 - react-router
 - i18next
 - helmet
 - redux
 - storybook
 - rewired
+
+Need to add
+- Logging
+- Telemetry
+- ECS - Feature Flag Service
+- Enforcement of code coverage
 
 # Getting Started with Create React App
 

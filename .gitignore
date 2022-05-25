@@ -25,3 +25,6 @@ yarn-error.log*
 # Cypress
 cypress/screenshots/
 cypress/videos/
+
+# Testim
+testim-headless.zip
