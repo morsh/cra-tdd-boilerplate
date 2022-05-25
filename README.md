@@ -5,19 +5,19 @@ The following resources are in use in this project:
 - Create React App
 - Typescript
 - ESLint
-- Cypress // https://www.testim.io/
+- Puppeteer
 - react-router
 - i18next
 - helmet
 - redux
 - storybook
 - rewired
+- Enforcement of code coverage
 
 Need to add
 - Logging
 - Telemetry
 - ECS - Feature Flag Service
-- Enforcement of code coverage
 
 # Getting Started with Create React App
 
