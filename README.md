@@ -14,6 +14,7 @@ The following resources are in use in this project:
 - rewired
 - Style Components
 - Enforcement of code coverage
+- Define react and react-dom as externals
 
 Need to add
 - Logging
