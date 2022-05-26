@@ -9,6 +9,12 @@ const multipleEntry = require('react-app-rewire-multiple-entry')([
 module.exports = {
   webpack: function(config, env) {
     multipleEntry.addMultiEntry(config);
-    return config;
+    return {
+      ...config,
+      externals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      }
+    };
   }
 };
