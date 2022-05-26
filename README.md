@@ -12,6 +12,7 @@ The following resources are in use in this project:
 - redux
 - storybook
 - rewired
+- Style Components
 - Enforcement of code coverage
 
 Need to add
